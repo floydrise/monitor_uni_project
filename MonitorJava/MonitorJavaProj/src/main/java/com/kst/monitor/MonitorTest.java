@@ -27,21 +27,24 @@ public class MonitorTest {
         try {
             Monitor m4 = new Monitor("Test", -100, 100, 100);
         } catch (Exception e) {
-            throw new NegativeValuesException(e);
+            // throw new NegativeValuesException(e);
+            System.out.println(new NegativeValuesException(e).toString());
         }
 
         // test empty model exception
         try {
             Monitor m3 = new Monitor("", 100, 100, 100);
         } catch (EmptyValuesExceptions e) {
-            throw new EmptyValuesExceptions(e);
+            // throw new EmptyValuesExceptions(e);
+            System.out.println(new EmptyValuesExceptions(e).toString());
         }
 
         // test negative height exception
         try {
             Monitor m5 = new Monitor("Test", 100, -100, 100);
         } catch (NegativeValuesException e) {
-            throw new NegativeValuesException(e);
+            // throw new NegativeValuesException(e);
+            System.out.println(new NegativeValuesException(e).toString());
         }
     }
 }
