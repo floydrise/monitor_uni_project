@@ -64,9 +64,10 @@ namespace kst {
     }
 
     std::ostream &operator<<(std::ostream &os, const monitor &monitor) {
-        os << "[model: " << monitor.model << ", width: " << monitor.width << ", height:" << monitor.height <<
+        os << "[model: " << monitor.get_model() << ", width: " << monitor.get_width() << ", height:" << monitor.
+                get_height() <<
                 ", price: " <<
-                monitor.price << "]";
+                monitor.get_price() << "]";
         return os;
     }
 

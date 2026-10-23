@@ -9,6 +9,7 @@
 namespace kst {
     class negative_value_error : public std::exception {
     public:
+        // Explicit added by CLion
         explicit negative_value_error(std::string text);
 
         [[nodiscard]] const char *what() const noexcept override;

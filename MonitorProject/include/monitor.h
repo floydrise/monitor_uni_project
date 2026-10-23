@@ -18,13 +18,10 @@ namespace kst {
                                        height(_height), price(_price) {
         };
 
-
         // default constructor
         monitor() = default;
 
-        // default destructor
-        ~monitor() = default;
-
+        // getters
         [[nodiscard]] std::string get_model() const;
 
         [[nodiscard]] int get_width() const;
@@ -42,9 +39,6 @@ namespace kst {
 
         void input_price();
 
-        // За печат към изходен поток
-        friend std::ostream &operator<<(std::ostream &os, const monitor &monitor);
-
         // За увеличаване на цената с подадена разлика
         void operator+=(double extra);
 
@@ -60,4 +54,7 @@ namespace kst {
         int height = 0;
         double price = 0.0;
     };
+
+    // За печат към изходен поток
+    std::ostream &operator<<(std::ostream &os, const monitor &monitor);
 }

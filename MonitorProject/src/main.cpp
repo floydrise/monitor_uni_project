@@ -2,7 +2,29 @@
 
 #include "../include/monitor.h"
 
-// Test program
+
+/*
+ * Test program
+ * Example test taking the happy path
+ * Test should be redone taking the bad path (empty model and negative width and height)
+ *
+ * Example input:
+ * Enter monitor model: Lenovo
+ * Enter monitor height: 1000
+ * Enter monitor width: 600
+ * Enter monitor price: 1200
+ * Enter monitor model: Dell
+ * Enter monitor height: 1200
+ * Enter monitor width: 800
+ * Enter monitor price: 1200
+ *
+ * Output:
+ * m1: [model: Lenovo, width: 600, height:1000, price: 1200]
+ * m2: [model: Dell, width: 800, height:1200, price: 1200]
+ * m1 OLD price: 1200
+ * m1 NEW price: 1300
+ * m1 costs more than m2
+ */
 int main() {
     kst::monitor m1;
     kst::monitor m2;
@@ -29,7 +51,7 @@ int main() {
         m2.input_price();
     } catch (const std::exception &e) {
         std::cout << e.what() << '\n';
-        return 1;
+        return 2;
     }
 
     // print first monitor
@@ -43,7 +65,7 @@ int main() {
     m1 += 100;
     std::cout << "m1 NEW price: " << m1.get_price() << '\n';
 
-    // operator "><" test
+    // operators >/< test
     if (m1 > m2) {
         std::cout << "m1 costs more than m2\n";
     } else if (m1 < m2) {

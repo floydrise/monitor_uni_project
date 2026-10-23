@@ -9,6 +9,7 @@
 namespace kst {
     class empty_value_error : public std::exception {
     public:
+        // explicit added by CLion
         explicit empty_value_error(std::string text);
 
         [[nodiscard]] const char *what() const noexcept override;
